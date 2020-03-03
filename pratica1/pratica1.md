@@ -44,4 +44,4 @@ Seja $k$ o tamanho da chave. Temos que cada $k_\text{ésimo}$ símbolo da mensag
 
 Como podemos assumir que o símbolo da mensagem original mais frequente é o espaco, conseguimos descobrir um símbolo da chave por submensagem. Basta pegar o símbolo cifrado mais frequente, $C_{freq}$, de cada submensagem e assumir que ele é o `space`, logo $K_i=(C_{freq}-32)\%n+32$
 
-A chave descoberta do `texto_cripto.txt` obtida através do `descobrirChave.c` foi `eaOm`. Embora eu acredite que o resultado não está certo, em todos os testes que realizei com textos e chaves conhecidas o resultado era certo.
+A chave descoberta do `texto_cripto_chave04.txt`, obtida através do programa `descobrirChave.c`, foi `AbC!`.

@@ -46,35 +46,20 @@ void main(){
     int tamanhoChave = 4;
     int tamanhoAlfabeto = ultimoChar - primeiroChar + 1;
 
-    char* mensagem = lerArquivo("texto_cripto.txt");
+    char* mensagem = lerArquivo("texto_cripto_chave04.txt");
     int tamanhoMensagem = strlen(mensagem);
     int tamanhoSubMensagem = tamanhoMensagem / tamanhoChave;
-    
-    char* mensagem1 = malloc(sizeof(char) * tamanhoSubMensagem);
-    char* mensagem2 = malloc(sizeof(char) * tamanhoSubMensagem);
-    char* mensagem3 = malloc(sizeof(char) * tamanhoSubMensagem);
-    char* mensagem4 = malloc(sizeof(char) * tamanhoSubMensagem);
 
-    for(int i = 0; i < tamanhoSubMensagem; i++){
-        mensagem1[i] = mensagem[tamanhoChave * i];
-        mensagem2[i] = mensagem[tamanhoChave * i + 1];
-        mensagem3[i] = mensagem[tamanhoChave * i + 2];
-        mensagem4[i] = mensagem[tamanhoChave * i + 3];
-    }
-    
+    char* subMensagem = malloc(sizeof(char) * tamanhoSubMensagem);
     char chave[4];
 
-    char m1 = maisFrequente(mensagem1);
-    chave[0] = (m1 - ' ') % tamanhoAlfabeto + ' ';
-
-    char m2 = maisFrequente(mensagem2);
-    chave[1] = (m2 - ' ') % tamanhoAlfabeto + ' ';
-
-    char m3 = maisFrequente(mensagem3);
-    chave[2] = (m3 - ' ') % tamanhoAlfabeto + ' ';
-
-    char m4 = maisFrequente(mensagem4);
-    chave[3] = (m4 - ' ') % tamanhoAlfabeto + ' ';
+    for(int i = 0; i < tamanhoChave; i++){
+        for(int j = 0; j < tamanhoSubMensagem; j++){
+            subMensagem[j] = mensagem[tamanhoChave * j + i];
+        }
+        char maxFreq = maisFrequente(subMensagem);
+        chave[i] = (maxFreq - ' ') % tamanhoAlfabeto + ' ';
+    }
 
     char* decifrada = (char*) malloc(sizeof(char) * tamanhoMensagem);
 
