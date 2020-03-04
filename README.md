@@ -10,7 +10,7 @@ Repositório para guardar minhas soluções de exercícios, práticas e trabalho
 | Datas importantes | Descrição |
 |:---:|:---:|
 | ~~17/02~~ | ~~Prática 1~~ |
-| 02/03 | Prática 2 |
+| ~~02/03~~ | ~~Prática 2~~ |
 | 16/03 | Prática 3 |
 | 19/03 | Prova 1 |
 | 30/03 | Prática 4 |
